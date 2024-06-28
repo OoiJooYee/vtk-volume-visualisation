@@ -255,7 +255,7 @@ int main(int argc, char** argv)
 	reader->SetDataDimensions(256, 256);
 	reader->SetImageRange(1, 44);
 	reader->SetDataByteOrderToBigEndian();
-	reader->SetFilePrefix("../data/frog/frog2ci");
+	reader->SetFilePrefix("../data/frog2ci");
 	reader->SetDataSpacing(0.25, 0.25, 1.0);
 	
 	// This part creates the colorMap function to the isosurface rendering.
