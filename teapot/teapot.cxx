@@ -252,7 +252,7 @@ int main(int argc, char** argv)
 	vtkVolume16Reader* reader = vtkVolume16Reader::New();
 	
 	reader->SetDataDimensions(256, 256);
-	reader->SetImageRange(1, 173);
+	reader->SetImageRange(1, 178);
 	reader->SetDataByteOrderToBigEndian();
 	reader->SetFilePrefix("../data/teapot");
 	reader->SetDataSpacing(1, 1, 1);
