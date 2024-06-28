@@ -252,7 +252,7 @@ int main(int argc, char** argv)
 	vtkVolume16Reader* reader = vtkVolume16Reader::New();
 	
 	reader->SetDataDimensions(256, 256);
-	reader->SetImageRange(1, 110);
+	reader->SetImageRange(1, 113);
 	reader->SetDataByteOrderToBigEndian();
 	reader->SetFilePrefix("../data/CThead");
 	reader->SetDataSpacing(1, 1, 1);
