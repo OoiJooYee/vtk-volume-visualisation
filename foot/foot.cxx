@@ -252,7 +252,7 @@ int main(int argc, char** argv)
 	vtkVolume16Reader* reader = vtkVolume16Reader::New();
 	
 	reader->SetDataDimensions(256, 256);
-	reader->SetImageRange(1, 240);
+	reader->SetImageRange(1, 256);
 	reader->SetDataByteOrderToBigEndian();
 	reader->SetFilePrefix("../data/foot");
 	reader->SetDataSpacing(0.7, 0.7, 0.7);
