@@ -73,7 +73,7 @@ public:
 		stepSize = 1.0; // Initial step size
 	}
 
-	// Called upon the registered event (i.e., a key press)
+		// Called upon the registered event (i.e., a key press)
 	void Execute(vtkObject* caller, unsigned long eventId, void* callData) {
 		double dist;
 		int point;
@@ -96,7 +96,7 @@ public:
 					selectedPoint = point;
 				}
 				else {
-					cout << "Number of point selected out of bound." << endl;
+					cout << "Number of point selected out of bound.\n" << endl;
 				}
 			}
 			else {
@@ -104,15 +104,23 @@ public:
 					selectedPoint = point;
 				}
 				else {
-					cout << "Number of point selected out of bound." << endl;
+					cout << "Number of point selected out of bound.\n" << endl;
 				}
 			}
 			break;
 		case '/':
 			rayStep = !rayStep;
+			if (rayStep)
+				printf("rayStep is true\n");
+			else
+				printf("rayStep is false\n");
 			break;
 		case '.':
 			changeColorOpac = !changeColorOpac;
+			if (changeColorOpac)
+				printf("changeColorOpac is true\n");
+			else
+				printf("changeColorOpac is false\n");
 			break;
 		case '+':
 		case '=':
@@ -121,6 +129,7 @@ public:
 					dist = map->GetSampleDistance();
 					dist += 1;
 					map->SetSampleDistance(dist);
+					printf("sample distance increased for ray casting\n");
 				}
 				else {
 					if (changeColorOpac) {
@@ -129,6 +138,7 @@ public:
 							volumeColorTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] += 50;
 							volumeColorTransferFunction->SetNodeValue(selectedPoint, pos);
+							printf("increase the position of selected control point in the color transfer function for isosurface\n");
 						}
 					}
 					else {
@@ -137,6 +147,7 @@ public:
 							volumeOpacityTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] += 50;
 							volumeOpacityTransferFunction->SetNodeValue(selectedPoint, pos);
+							printf("increase the position of selected control point in the opacity transfer function for isosurface\n");
 						}
 					}
 				}
@@ -150,6 +161,7 @@ public:
 					if (dist > 1) {
 						dist -= 1;
 						map->SetSampleDistance(dist);
+						printf("sample distance decreased for ray casting\n");
 					}
 				}
 				else {
@@ -159,6 +171,7 @@ public:
 							volumeColorTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] -= 50;
 							volumeColorTransferFunction->SetNodeValue(selectedPoint, pos);
+							printf("decrease the position of selected control point in the color transfer function for isosurface\n");
 						}
 					}
 					else {
@@ -167,6 +180,7 @@ public:
 							volumeOpacityTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] -= 50;
 							volumeOpacityTransferFunction->SetNodeValue(selectedPoint, pos);
+							printf("decrease the position of selected control point in the opacity transfer function for isosurface\n");
 						}
 					}
 				}
@@ -177,6 +191,7 @@ public:
 				isoValue1 += 100.0; // Increase iso-value for contourExtractor1
 				contourExtractor1->SetValue(0, isoValue1);
 				setColorOpacity(contour1, contourExtractor1, colorTransferFunction, opacityTransferFunction);
+				printf("increased the isoValue1 to ");
 				cout << isoValue1 << endl;
 			}
 			break;
@@ -186,6 +201,7 @@ public:
 				if (isoValue1 < 0.0) isoValue1 = 0.0; // Ensure it doesn't go below 0
 				contourExtractor1->SetValue(0, isoValue1);
 				setColorOpacity(contour1, contourExtractor1, colorTransferFunction, opacityTransferFunction);
+				printf("decreased the isoValue1 to ");
 				cout << isoValue1 << endl;
 			}
 			break;
@@ -194,6 +210,7 @@ public:
 				isoValue2 += 100.0; // Increase iso-value for contourExtractor2
 				contourExtractor2->SetValue(0, isoValue2);
 				setColorOpacity(contour2, contourExtractor2, colorTransferFunction, opacityTransferFunction);
+				printf("increased the isoValue2 to ");
 				cout << isoValue2 << endl;
 			}
 			break;
@@ -203,6 +220,7 @@ public:
 				if (isoValue2 < 0.0) isoValue2 = 0.0; // Ensure it doesn't go below 0
 				contourExtractor2->SetValue(0, isoValue2);
 				setColorOpacity(contour2, contourExtractor2, colorTransferFunction, opacityTransferFunction);
+				printf("decreased the isoValue2 to ");
 				cout << isoValue2 << endl;
 			}
 			break;
@@ -218,11 +236,13 @@ public:
 				renderer->AddActor(contour2);
 				scalarWidget->GetScalarBarActor()->SetLookupTable(colorTransferFunction);
 				mode = 1;
+				printf("changed to isosurface rendering");
 			}
 			else if (mode == 1) {
 				renderer->AddVolume(volume);
 				scalarWidget->GetScalarBarActor()->SetLookupTable(volumeColorTransferFunction);
 				mode = 0;
+				printf("changed to ray marching");
 			}
 			scalarWidget->EnabledOn();
 			break;
