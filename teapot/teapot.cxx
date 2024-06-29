@@ -226,8 +226,8 @@ public:
 			}
 			break;
 			// Interchanged between isosurface/ray marching
-		case 't':
-		case 'T':
+		case 's':
+		case 'S':
 			renderer->RemoveAllViewProps();
 			renderer->AddActor(outline);
 			vtkScalarBarWidget* scalarWidget = vtkScalarBarWidget::New();
