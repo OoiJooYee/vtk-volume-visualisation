@@ -139,7 +139,7 @@ public:
 							volumeColorTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] += 50;
 							volumeColorTransferFunction->SetNodeValue(selectedPoint, pos);
-							printf("increase the position of selected control point in the color transfer function for isosurface\n");
+							printf("increase the position of selected control point in the color transfer function for ray marching\n");
 						}
 					}
 					else {
@@ -148,7 +148,7 @@ public:
 							volumeOpacityTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] += 50;
 							volumeOpacityTransferFunction->SetNodeValue(selectedPoint, pos);
-							printf("increase the position of selected control point in the opacity transfer function for isosurface\n");
+							printf("increase the position of selected control point in the opacity transfer function for ray marching\n");
 						}
 					}
 				}
@@ -172,7 +172,7 @@ public:
 							volumeColorTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] -= 50;
 							volumeColorTransferFunction->SetNodeValue(selectedPoint, pos);
-							printf("decrease the position of selected control point in the color transfer function for isosurface\n");
+							printf("decrease the position of selected control point in the color transfer function for ray marching\n");
 						}
 					}
 					else {
@@ -181,7 +181,7 @@ public:
 							volumeOpacityTransferFunction->GetNodeValue(selectedPoint, pos);
 							pos[0] -= 50;
 							volumeOpacityTransferFunction->SetNodeValue(selectedPoint, pos);
-							printf("decrease the position of selected control point in the opacity transfer function for isosurface\n");
+							printf("decrease the position of selected control point in the opacity transfer function for ray marching\n");
 						}
 					}
 				}
