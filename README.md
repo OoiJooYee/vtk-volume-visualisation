@@ -11,15 +11,19 @@ Download the dataset and put the dataset on desired location. Put the **cxx file
 
 **Important Surfaces**
 1. CT Head Dataset
+
 The CT head dataset has two interesting surfaces. The first interesting surface is the skull of the head, the second interesting surface is the brain inside the skull. 
 
 2. Foot Dataset
+
 The foot dataset has two interesting surfaces. The first interesting surface is the skin of the foot and the second interesting surface is the bones of the foot. 
 
 3. Teapot Dataset
+
 The teapot dataset has four interesting surfaces. The first surface is the table and the tray below the teapot, second surface is the body of the teapot, the third surface is the body of the container inside the teapot and the fourth surface is the lobster inside the container.
 
 4. Wholefrog Dataset
+
 The whole frog dataset has three interesting surfaces. The first surface is the skin of the frog, the second surface is the bones of the frog and the third surface is the organs of the frog.
 
 
