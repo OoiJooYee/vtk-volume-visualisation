@@ -58,23 +58,23 @@ Rendering a large number of surfaces in VTK can make the image difficult to unde
 
 9. Key '**+**' or '**=**'
 
-   Can work with the key '/' (adjusting ray step) to increase the step size for ray
-   marching or modify the selected transfer function point value.
+   Can work with the key 'r'/'R' (adjusting ray step) to increase the step size for ray
+   marching or modify the color/opacity transfer function point value.
 
 11. Key '**-**' or '**_**'
    
-    Also work with '/' (adjusting ray step) to decrease the step size for ray
-    marching or modify the selected transfer function point value.
+    Also work with 'r'/'R' (adjusting ray step) to decrease the step size for ray
+    marching or modify the color/opacity transfer function point value.
    
 14. Key '**I**' and '**i**'
    
-    Use during volume in iso surface method. 'I' can increase the iso-value used to
+    Use during isosurface rendering. 'I' can increase the iso-value used to
     extract the first iso surface by 100 while 'i' can decrease the iso-value used to
     extract the first iso surfaca by 100.
 
 17. Key '**K**' and '**k**'
    
-    Use during volume in iso surface method. 'K' can increase the iso-value used to
+    Use during isosurface rendering. 'K' can increase the iso-value used to
     extract the first iso surface by 100 while 'k' can decrease the iso-value used to
     extract the first iso surfaca by 100.
 
