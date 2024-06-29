@@ -37,7 +37,7 @@ Rendering a large number of surfaces in VTK can make the image difficult to unde
 
 ['KeyInterpreter' is used to handle user keyboard inputs to adjust the rendering parameters such as iso-values and transfer functions.]
 
-1. Key '**s**'
+1. Key '**s**' or **'S'**
 
    Toggles the rendering modes which are between isosurface rendering and ray marching rendering.
 
@@ -47,24 +47,24 @@ Rendering a large number of surfaces in VTK can make the image difficult to unde
    works when using ray marching method. If the number of point selected is out of bound,
    error statement will be displayed.
 
-5. Key '**/**'
+5. Key '**r**' or **'R'**
 
    Toggles between ray step and transfer function editing mode when it is rendered in ray
    marching.
 
-7. Key '**.**'
+7. Key '**o**' or **'O'**
 
    Toggles between editing the points in color and opacity transfer functions.
 
 9. Key '**+**' or '**=**'
 
-   Can work with the key '/' (adjusting ray step) to increase the sample distance for ray
-   casting or modify the selected transfer function point value.
+   Can work with the key '/' (adjusting ray step) to increase the step size for ray
+   marching or modify the selected transfer function point value.
 
 11. Key '**-**' or '**_**'
    
-    Also work with '/' (adjusting ray step) to decrease the sample distance for ray
-    casting or modify the selected transfer function point value.
+    Also work with '/' (adjusting ray step) to decrease the step size for ray
+    marching or modify the selected transfer function point value.
    
 14. Key '**I**' and '**i**'
    
