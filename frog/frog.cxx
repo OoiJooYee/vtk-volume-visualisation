@@ -73,9 +73,8 @@ public:
 		stepSize = 1.0; // Initial step size
 	}
 
-		// Called upon the registered event (i.e., a key press)
+	// Called upon the registered event (i.e., a key press)
 	void Execute(vtkObject* caller, unsigned long eventId, void* callData) {
-		double dist;
 		int point;
 		vtkRenderWindowInteractor* iren =
 			reinterpret_cast<vtkRenderWindowInteractor*>(caller);
@@ -108,14 +107,16 @@ public:
 				}
 			}
 			break;
-		case '/':
+		case 'r':
+		case 'R':
 			rayStep = !rayStep;
 			if (rayStep)
 				printf("rayStep is true\n");
 			else
 				printf("rayStep is false\n");
 			break;
-		case '.':
+		case 'o':
+		case 'O':
 			changeColorOpac = !changeColorOpac;
 			if (changeColorOpac)
 				printf("changeColorOpac is true\n");
@@ -126,10 +127,10 @@ public:
 		case '=':
 			if (mode == 0) {
 				if (rayStep) {
-					dist = map->GetSampleDistance();
-					dist += 1;
-					map->SetSampleDistance(dist);
-					printf("sample distance increased for ray casting\n");
+					stepSize = map->GetSampleDistance();
+					stepSize += 1;
+					map->SetSampleDistance(stepSize);
+					cout << "step size increased for ray marching to " << stepSize << endl;
 				}
 				else {
 					if (changeColorOpac) {
@@ -157,11 +158,11 @@ public:
 		case '_':
 			if (mode == 0) {
 				if (rayStep) {
-					dist = map->GetSampleDistance();
-					if (dist > 1) {
-						dist -= 1;
-						map->SetSampleDistance(dist);
-						printf("sample distance decreased for ray casting\n");
+					stepSize = map->GetSampleDistance();
+					if (stepSize > 1) {
+						stepSize -= 1;
+						map->SetSampleDistance(stepSize);
+						cout << "step size decreased for ray marching to " << stepSize << endl;
 					}
 				}
 				else {
@@ -226,6 +227,7 @@ public:
 			break;
 			// Interchanged between isosurface/ray marching
 		case 's':
+		case 'S':
 			renderer->RemoveAllViewProps();
 			renderer->AddActor(outline);
 			vtkScalarBarWidget* scalarWidget = vtkScalarBarWidget::New();
@@ -236,13 +238,13 @@ public:
 				renderer->AddActor(contour2);
 				scalarWidget->GetScalarBarActor()->SetLookupTable(colorTransferFunction);
 				mode = 1;
-				printf("changed to isosurface rendering");
+				printf("changed to isosurface rendering\n");
 			}
 			else if (mode == 1) {
 				renderer->AddVolume(volume);
 				scalarWidget->GetScalarBarActor()->SetLookupTable(volumeColorTransferFunction);
 				mode = 0;
-				printf("changed to ray marching");
+				printf("changed to ray marching\n");
 			}
 			scalarWidget->EnabledOn();
 			break;
