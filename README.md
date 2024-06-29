@@ -8,7 +8,7 @@ Download the dataset and put the dataset on desired location. Put the **cxx file
 3. Teapot Dataset
 4. Wholefrog Dataset
 
-Important Surfaces
+**Important Surfaces**
 1. CT Head Dataset
 The CT head dataset has two interesting surfaces. The first interesting surface is the skull of the head, the second interesting surface is the brain inside the skull. 
 
