@@ -278,7 +278,7 @@ int main(int argc, char** argv)
 	reader->SetImageRange(1, 44);
 	reader->SetDataByteOrderToBigEndian();
 	reader->SetFilePrefix("../data/frog2ci");
-	reader->SetDataSpacing(0.25, 0.25, 1.0);
+	reader->SetDataSpacing(1.0, 1.0, 2.2);
 	
 	// This part creates the colorMap function to the isosurface rendering.
 	vtkPiecewiseFunction* isoOpacityTransferFunction = vtkPiecewiseFunction::New();
