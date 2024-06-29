@@ -16,7 +16,7 @@ Download the dataset and put the dataset on desired location. Put the **cxx file
 
 2. Foot Dataset
 
-   The foot dataset has two interesting surfaces. The first interesting surface is the skin of the foot and the second interesting surface is the bones of the foot. 
+   The foot dataset has three interesting surfaces. The first interesting surface is the skin of the foot, the second interesting surface is the flesh of the foot and the third interesting surface is the bones of the foot. 
 
 3. Teapot Dataset
 
