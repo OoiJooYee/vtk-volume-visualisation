@@ -23,6 +23,7 @@ The whole frog dataset has three interesting surfaces. The first surface is the 
 
 
 **Discussion on why a larger number of surfaces make the image hard to comprehend**
+
 Rendering a large number of surfaces in VTK can make the image difficult to understand for several reasons. The inner surfaces can become hidden by the outer surfaces, leading to occlusion and making it hard to see the full 3D shape. Having too many surfaces in a single view creates a cluttered image, making it challenging to distinguish individual surfaces and understand their spatial relationships. Depth perception also becomes more difficult with many overlapping surfaces, as depth cues like occlusion and lighting are less effective. Additionally, rendering a high number of surfaces requires significant processing power, which can result in performance issues like slower frame rates, hindering smooth exploration of the image. Finally, the viewer's attention gets divided across the entire volume, making it harder to focus on specific areas of interest. 
 
 **User Interaction**
